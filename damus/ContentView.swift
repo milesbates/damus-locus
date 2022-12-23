@@ -10,10 +10,11 @@ import Starscream
 import Kingfisher
 
 var BOOTSTRAP_RELAYS = [
-    "wss://relay.damus.io",
-    "wss://nostr-relay.wlvs.space",
-    "wss://nostr.fmt.wiz.biz",
-    "wss://nostr.oxtr.dev",
+    //"wss://relay.damus.io",
+    //"wss://nostr-relay.wlvs.space",
+    //"wss://nostr.fmt.wiz.biz",
+    //"wss://nostr.oxtr.dev",
+    "ws://192.168.1.41:6969"
 ]
 
 struct TimestampedProfile {
