@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 enum ProfileTab: Hashable {
     case posts
@@ -44,6 +45,56 @@ func follow_btn_enabled_state(_ fs: FollowState) -> Bool {
        return true
     }
 }
+
+
+
+class LocationManager: NSObject, CLLocationManagerDelegate {
+    let locationManager = CLLocationManager()
+
+    override init() {
+        super.init()
+        self.locationManager.delegate = self
+        self.locationManager.requestWhenInUseAuthorization()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        // This method is called when the authorization status changes.
+        if status == .authorizedWhenInUse {
+            // The app is authorized to use location services.
+            // You can start updating the location here.
+        }
+    }
+
+    func getCurrentLocation() -> CLLocationCoordinate2D? {
+        guard CLLocationManager.locationServicesEnabled() else {
+            return nil
+        }
+
+        locationManager.startUpdatingLocation()
+        let currentLocation = locationManager.location
+        locationManager.stopUpdatingLocation()
+
+        guard let location = currentLocation else {
+            return nil
+        }
+
+        return location.coordinate
+    }
+}
+
+
+func get_location() -> Bool {
+    var lm = LocationManager()
+    var currentLoc: CLLocationCoordinate2D!
+    currentLoc = lm.getCurrentLocation()
+    print(currentLoc.latitude)
+    print(currentLoc.longitude)
+    return true
+}
+
+
+
+
 
 struct ProfileNameView: View {
     let pubkey: String
@@ -144,6 +195,18 @@ struct ProfileView: View {
         }
     }
     
+    
+    func LSButton() -> some View {
+        Button(action: {
+            get_location()
+        }) {
+            Image(systemName: "location.circle")
+                .symbolRenderingMode(.palette)
+                .font(.system(size: 34).weight(.thin))
+                .foregroundStyle(colorScheme == .light ? .black : .white, colorScheme == .light ? .black.opacity(0.1) : .white.opacity(0.2))
+        }
+    }
+    
     var DMButton: some View {
         let dm_model = damus_state.dms.lookup_or_create(profile.pubkey)
         let dmview = DMChatView(damus_state: damus_state, pubkey: profile.pubkey)
@@ -179,6 +242,7 @@ struct ProfileView: View {
                 
                 DMButton
                 
+                LSButton()
                 
                 if profile.pubkey != damus_state.pubkey {
                     FollowButtonView(
@@ -315,5 +379,3 @@ struct KeyView: View {
         }
     }
 }
-
-        
