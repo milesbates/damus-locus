@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreLocation
 
+
 enum ProfileTab: Hashable {
     case posts
     case following
@@ -45,54 +46,6 @@ func follow_btn_enabled_state(_ fs: FollowState) -> Bool {
        return true
     }
 }
-
-
-
-class LocationManager: NSObject, CLLocationManagerDelegate {
-    let locationManager = CLLocationManager()
-
-    override init() {
-        super.init()
-        self.locationManager.delegate = self
-        self.locationManager.requestWhenInUseAuthorization()
-    }
-
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // This method is called when the authorization status changes.
-        if status == .authorizedWhenInUse {
-            // The app is authorized to use location services.
-            // You can start updating the location here.
-        }
-    }
-
-    func getCurrentLocation() -> CLLocationCoordinate2D? {
-        guard CLLocationManager.locationServicesEnabled() else {
-            return nil
-        }
-
-        locationManager.startUpdatingLocation()
-        let currentLocation = locationManager.location
-        locationManager.stopUpdatingLocation()
-
-        guard let location = currentLocation else {
-            return nil
-        }
-
-        return location.coordinate
-    }
-}
-
-
-func get_location() -> Bool {
-    var lm = LocationManager()
-    var currentLoc: CLLocationCoordinate2D!
-    currentLoc = lm.getCurrentLocation()
-    print(currentLoc.latitude)
-    print(currentLoc.longitude)
-    return true
-}
-
-
 
 
 
@@ -176,6 +129,16 @@ struct ProfileView: View {
     @Environment(\.colorScheme) var colorScheme
     
     //@EnvironmentObject var profile: ProfileModel
+    @StateObject var locationManager = LocationManager()
+        
+    var userLatitude: String {
+        return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
+    }
+    
+    var userLongitude: String {
+        return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
+    }
+        
     
     func LNButton(_ url: URL, profile: Profile) -> some View {
         Button(action: {
@@ -198,7 +161,8 @@ struct ProfileView: View {
     
     func LSButton() -> some View {
         Button(action: {
-            get_location()
+            print("Latitude: \(userLatitude)")
+            print("Longitude: \(userLongitude)")
         }) {
             Image(systemName: "location.circle")
                 .symbolRenderingMode(.palette)
@@ -243,6 +207,7 @@ struct ProfileView: View {
                 DMButton
                 
                 LSButton()
+            
                 
                 if profile.pubkey != damus_state.pubkey {
                     FollowButtonView(
@@ -328,6 +293,7 @@ struct ProfileView: View {
         .onAppear() {
             profile.subscribe()
             //followers.subscribe()
+           
         }
         .onDisappear {
             profile.unsubscribe()
@@ -335,6 +301,8 @@ struct ProfileView: View {
             // our profilemodel needs a bit more help
         }
     }
+    
+
 }
 
 struct ProfileView_Previews: PreviewProvider {
