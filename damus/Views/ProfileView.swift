@@ -229,7 +229,7 @@ struct ProfileView: View {
                 
                 DMButton
                 
-                LSButton()
+                
             
                 
                 if profile.pubkey != damus_state.pubkey {
@@ -238,6 +238,9 @@ struct ProfileView: View {
                         follow_state: damus_state.contacts.follow_state(profile.pubkey)
                     )
                 } else {
+                    
+                    LSButton()
+                   
                     NavigationLink(destination: EditMetadataView(damus_state: damus_state)) {
                         EditButton(damus_state: damus_state)
                     }
