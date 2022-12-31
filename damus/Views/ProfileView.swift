@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 enum ProfileTab: Hashable {
     case posts
@@ -44,6 +45,8 @@ func follow_btn_enabled_state(_ fs: FollowState) -> Bool {
        return true
     }
 }
+
+
 
 struct ProfileNameView: View {
     let pubkey: String
@@ -111,6 +114,7 @@ struct EditButton: View {
     }
 }
 
+
 struct ProfileView: View {
     let damus_state: DamusState
     let zoom_size: CGFloat = 350
@@ -123,10 +127,24 @@ struct ProfileView: View {
     @State var inv: String = ""
     @State var is_zoomed: Bool = false
     
+    @State private var showingMapSheet = false
+    
+    @State private var lat: Double = 0
+    @State private var lon: Double = 0
+
     @Environment(\.dismiss) var dismiss
     @Environment(\.colorScheme) var colorScheme
     
     //@EnvironmentObject var profile: ProfileModel
+    @StateObject var locationManager = LocationManager()
+        
+    var userLatitude: String {
+        return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
+    }
+    
+    var userLongitude: String {
+        return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
+    }
     
     func LNButton(lud06: String?, lud16: String?, profile: Profile) -> some View {
         Button(action: {
@@ -150,6 +168,29 @@ struct ProfileView: View {
                 }
         }.sheet(isPresented: $showingSelectWallet, onDismiss: {showingSelectWallet = false}) {
             SelectWalletView(showingSelectWallet: $showingSelectWallet, invoice: $inv)
+        }
+    }
+    
+    
+    
+    
+    func LSButton() -> some View {
+        Button(action: {
+            //print("Latitude: \(userLatitude)")
+            //print("Longitude: \(userLongitude)")
+            lat = locationManager.lastLocation?.coordinate.latitude ?? 41.38003409196938
+            lon = locationManager.lastLocation?.coordinate.longitude ?? 2.175186381284061
+            showingMapSheet.toggle()
+        }) {
+            Image(systemName: "location.circle")
+                .symbolRenderingMode(.palette)
+                .font(.system(size: 34).weight(.thin))
+                .foregroundStyle(colorScheme == .light ? .black : .white, colorScheme == .light ? .black.opacity(0.1) : .white.opacity(0.2))
+            
+                .sheet(isPresented: $showingMapSheet) {
+
+                    MapSheetView(lat: $lat, lon: $lon)
+                }
         }
     }
     
@@ -188,6 +229,8 @@ struct ProfileView: View {
                 
                 DMButton
                 
+                LSButton()
+            
                 
                 if profile.pubkey != damus_state.pubkey {
                     FollowButtonView(
@@ -199,6 +242,10 @@ struct ProfileView: View {
                         EditButton(damus_state: damus_state)
                     }
                 }
+                
+             
+          
+                
                 
             }
             
@@ -284,6 +331,7 @@ struct ProfileView: View {
         .onAppear() {
             profile.subscribe()
             //followers.subscribe()
+           
         }
         .onDisappear {
             profile.unsubscribe()
@@ -291,6 +339,8 @@ struct ProfileView: View {
             // our profilemodel needs a bit more help
         }
     }
+    
+
 }
 
 struct ProfileView_Previews: PreviewProvider {
@@ -335,5 +385,3 @@ struct KeyView: View {
         }
     }
 }
-
-        
