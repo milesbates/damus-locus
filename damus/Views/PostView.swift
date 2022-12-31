@@ -16,6 +16,7 @@ let POST_PLACEHOLDER = "Type your post here..."
 
 struct PostView: View {
     @State var post: String = ""
+    @State private var includeLocation = false
 
     let replying_to: NostrEvent?
     @FocusState var focus: Bool
@@ -69,6 +70,11 @@ struct PostView: View {
                 }
             }
             .padding([.top, .bottom], 4)
+            
+            HStack {
+                //TO-DO hide this in a reply view
+                Toggle("Location", isOn: $includeLocation)
+            }
 
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $post)
