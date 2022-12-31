@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 import MapKit
-import GeoJSON
+
 
 
 struct MapSheetView: View {
