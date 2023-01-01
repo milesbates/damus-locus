@@ -194,6 +194,9 @@ struct ProfileView: View {
         }
     }
     
+
+    static let markdown = Markdown()
+
     var DMButton: some View {
         let dm_model = damus_state.dms.lookup_or_create(profile.pubkey)
         let dmview = DMChatView(damus_state: damus_state, pubkey: profile.pubkey)
@@ -255,7 +258,7 @@ struct ProfileView: View {
             ProfileNameView(pubkey: profile.pubkey, profile: data, contacts: damus_state.contacts)
                 .padding(.bottom)
             
-            Text(data?.about ?? "")
+            Text(ProfileView.markdown.process(data?.about ?? ""))
                 .font(.subheadline)
         
             Divider()
