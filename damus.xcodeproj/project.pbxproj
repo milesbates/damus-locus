@@ -11,6 +11,7 @@
 		3169CAE6294E69C000EE4006 /* EmptyTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169CAE5294E69C000EE4006 /* EmptyTimelineView.swift */; };
 		3169CAED294FCCFC00EE4006 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169CAEC294FCCFC00EE4006 /* Constants.swift */; };
 		31D2E847295218AF006D67F8 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D2E846295218AF006D67F8 /* Shimmer.swift */; };
+		3A4325A82961E11400BFCD9D /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 3A4325AA2961E11400BFCD9D /* Localizable.stringsdict */; };
 		3ACBCB78295FE5C70037388A /* TimeAgoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACBCB77295FE5C70037388A /* TimeAgoTests.swift */; };
 		4C06670128FC7C5900038D2A /* RelayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06670028FC7C5900038D2A /* RelayView.swift */; };
 		4C06670428FC7EC500038D2A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4C06670328FC7EC500038D2A /* Kingfisher */; };
@@ -50,6 +51,7 @@
 		4C363AA428296DEE006E126D /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C363AA328296DEE006E126D /* SearchModel.swift */; };
 		4C363AA828297703006E126D /* InsertSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C363AA728297703006E126D /* InsertSort.swift */; };
 		4C3A1D332960DB0500558C0F /* Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3A1D322960DB0500558C0F /* Markdown.swift */; };
+		4C3A1D3729637E0500558C0F /* PreviewCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3A1D3629637E0500558C0F /* PreviewCache.swift */; };
 		4C3AC79B28306D7B00E1F516 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AC79A28306D7B00E1F516 /* Contacts.swift */; };
 		4C3AC79D2833036D00E1F516 /* FollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AC79C2833036D00E1F516 /* FollowingView.swift */; };
 		4C3AC79F2833115300E1F516 /* FollowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AC79E2833115300E1F516 /* FollowButtonView.swift */; };
@@ -166,6 +168,7 @@
 		3169CAE5294E69C000EE4006 /* EmptyTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTimelineView.swift; sourceTree = "<group>"; };
 		3169CAEC294FCCFC00EE4006 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = damus/Util/Constants.swift; sourceTree = SOURCE_ROOT; };
 		31D2E846295218AF006D67F8 /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
+		3A4325A92961E11400BFCD9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		3ACBCB77295FE5C70037388A /* TimeAgoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAgoTests.swift; sourceTree = "<group>"; };
 		4C06670028FC7C5900038D2A /* RelayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayView.swift; sourceTree = "<group>"; };
 		4C06670528FCB08600038D2A /* ImageCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarousel.swift; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 		4C363AA328296DEE006E126D /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		4C363AA728297703006E126D /* InsertSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertSort.swift; sourceTree = "<group>"; };
 		4C3A1D322960DB0500558C0F /* Markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markdown.swift; sourceTree = "<group>"; };
+		4C3A1D3629637E0500558C0F /* PreviewCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCache.swift; sourceTree = "<group>"; };
 		4C3AC79A28306D7B00E1F516 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		4C3AC79C2833036D00E1F516 /* FollowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingView.swift; sourceTree = "<group>"; };
 		4C3AC79E2833115300E1F516 /* FollowButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowButtonView.swift; sourceTree = "<group>"; };
@@ -546,6 +550,7 @@
 				3169CAEC294FCCFC00EE4006 /* Constants.swift */,
 				910805D1295BF81300C384FE /* Location.swift */,
 				3165648A295B70D500C64604 /* LinkView.swift */,
+				4C3A1D3629637E0500558C0F /* PreviewCache.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -599,6 +604,7 @@
 				4CE6DEE827F7A08100C66700 /* ContentView.swift */,
 				4CE6DEEA27F7A08200C66700 /* Assets.xcassets */,
 				4CE6DEEC27F7A08200C66700 /* Preview Content */,
+				3A4325AA2961E11400BFCD9D /* Localizable.stringsdict */,
 			);
 			path = damus;
 			sourceTree = "<group>";
@@ -761,6 +767,7 @@
 			files = (
 				4CE6DEEE27F7A08200C66700 /* Preview Assets.xcassets in Resources */,
 				4CE6DEEB27F7A08200C66700 /* Assets.xcassets in Resources */,
+				3A4325A82961E11400BFCD9D /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,6 +851,7 @@
 				3169CAE6294E69C000EE4006 /* EmptyTimelineView.swift in Sources */,
 				4C3EA64928FF597700C48A62 /* bech32.c in Sources */,
 				4C90BD162839DB54008EE7EF /* NostrMetadata.swift in Sources */,
+				4C3A1D3729637E0500558C0F /* PreviewCache.swift in Sources */,
 				4C3EA67528FF7A5A00C48A62 /* take.c in Sources */,
 				4C3AC7A12835A81400E1F516 /* SetupView.swift in Sources */,
 				4C06670128FC7C5900038D2A /* RelayView.swift in Sources */,
@@ -946,6 +954,17 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		3A4325AA2961E11400BFCD9D /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A4325A92961E11400BFCD9D /* en */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		4CE6DF0527F7A08200C66700 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -997,7 +1016,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1052,7 +1071,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1071,7 +1090,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = damus/damus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"damus/Preview Content\"";
 				DEVELOPMENT_TEAM = XK7H4JAB3D;
 				ENABLE_PREVIEWS = YES;
@@ -1079,6 +1098,7 @@
 				INFOPLIST_FILE = damus/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Damus;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allows you to attach location data to posts.";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1092,7 +1112,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.1.8;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jb55.damus2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1111,7 +1131,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = damus/damus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"damus/Preview Content\"";
 				DEVELOPMENT_TEAM = XK7H4JAB3D;
 				ENABLE_PREVIEWS = YES;
@@ -1119,6 +1139,7 @@
 				INFOPLIST_FILE = damus/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Damus;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allows you to attach location data to posts.";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1132,7 +1153,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.1.8;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jb55.damus2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

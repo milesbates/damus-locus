@@ -53,6 +53,8 @@ struct InnerProfilePicView: View {
     var body: some View {
         Group {
             KFAnimatedImage(url)
+                .callbackQueue(.dispatch(.global(qos: .background)))
+                .processingQueue(.dispatch(.global(qos: .background)))
                 .configure { view in
                     view.framePreloadCount = 1
                 }
@@ -71,7 +73,6 @@ struct InnerProfilePicView: View {
 }
 
 struct ProfilePicView: View {
-    
     let pubkey: String
     let size: CGFloat
     let highlight: Highlight
