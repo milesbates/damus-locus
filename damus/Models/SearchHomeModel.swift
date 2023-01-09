@@ -41,40 +41,40 @@ class SearchHomeModel: ObservableObject {
     }
     
     func handle_event(relay_id: String, conn_ev: NostrConnectionEvent) {
-        switch conn_ev {
-        case .ws_event:
-            break
-        case .nostr_event(let event):
-            switch event {
-            case .event(let sub_id, let ev):
-                guard sub_id == self.base_subid || sub_id == self.profiles_subid else {
+        guard case .nostr_event(let event) = conn_ev else {
+            return
+        }
+        
+        switch event {
+        case .event(let sub_id, let ev):
+            guard sub_id == self.base_subid || sub_id == self.profiles_subid else {
+                return
+            }
+            if ev.is_textlike && ev.should_show_event && !ev.is_reply(nil) {
+                if seen_pubkey.contains(ev.pubkey) {
                     return
                 }
-                if ev.is_textlike && ev.should_show_event {
-                    if seen_pubkey.contains(ev.pubkey) {
-                        return
-                    }
-                    seen_pubkey.insert(ev.pubkey)
-                    let _ = insert_uniq_sorted_event(events: &events, new_ev: ev) {
-                        $0.created_at > $1.created_at
-                    }
+                seen_pubkey.insert(ev.pubkey)
+                
+                let _ = insert_uniq_sorted_event(events: &events, new_ev: ev) {
+                    $0.created_at > $1.created_at
                 }
-            case .notice(let msg):
-                print("search home notice: \(msg)")
-            case .eose(let sub_id):
-                loading = false
-                
-                if sub_id == self.base_subid {
-                    // Make sure we unsubscribe after we've fetched the global events
-                    // global events are not realtime
-                    unsubscribe(to: relay_id)
-                    
-                    load_profiles(profiles_subid: profiles_subid, relay_id: relay_id, events: events, damus_state: damus_state)
-                }
-                
-                
-                break
             }
+        case .notice(let msg):
+            print("search home notice: \(msg)")
+        case .eose(let sub_id):
+            loading = false
+            
+            if sub_id == self.base_subid {
+                // Make sure we unsubscribe after we've fetched the global events
+                // global events are not realtime
+                unsubscribe(to: relay_id)
+                
+                load_profiles(profiles_subid: profiles_subid, relay_id: relay_id, events: events, damus_state: damus_state)
+            }
+            
+            
+            break
         }
     }
 }
@@ -112,27 +112,30 @@ func load_profiles(profiles_subid: String, relay_id: String, events: [NostrEvent
     let authors = find_profiles_to_fetch(profiles: damus_state.profiles, events: events)
     filter.authors = authors
     
-    if !authors.isEmpty {
-        print("loading \(authors.count) profiles from \(relay_id)")
-        damus_state.pool.subscribe_to(sub_id: profiles_subid, filters: [filter], to: [relay_id]) { sub_id, conn_ev in
-            let (sid, done) = handle_subid_event(pool: damus_state.pool, relay_id: relay_id, ev: conn_ev) { sub_id, ev in
-                guard sub_id == profiles_subid else {
-                    return
-                }
-                
-                if ev.known_kind == .metadata {
-                    process_metadata_event(profiles: damus_state.profiles, ev: ev)
-                }
-                
-            }
-            
-            guard done && sid == profiles_subid else {
+    guard !authors.isEmpty else {
+        return
+    }
+    
+    print("loading \(authors.count) profiles from \(relay_id)")
+    
+    damus_state.pool.subscribe_to(sub_id: profiles_subid, filters: [filter], to: [relay_id]) { sub_id, conn_ev in
+        let (sid, done) = handle_subid_event(pool: damus_state.pool, relay_id: relay_id, ev: conn_ev) { sub_id, ev in
+            guard sub_id == profiles_subid else {
                 return
             }
-                
-            print("done loading \(authors.count) profiles from \(relay_id)")
-            damus_state.pool.unsubscribe(sub_id: profiles_subid, to: [relay_id])
+            
+            if ev.known_kind == .metadata {
+                process_metadata_event(profiles: damus_state.profiles, ev: ev)
+            }
+            
         }
+        
+        guard done && sid == profiles_subid else {
+            return
+        }
+            
+        print("done loading \(authors.count) profiles from \(relay_id)")
+        damus_state.pool.unsubscribe(sub_id: profiles_subid, to: [relay_id])
     }
 }
 

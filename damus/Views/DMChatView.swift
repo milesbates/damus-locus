@@ -19,7 +19,7 @@ struct DMChatView: View {
                 VStack(alignment: .leading) {
                     ForEach(Array(zip(dms.events, dms.events.indices)), id: \.0.id) { (ev, ind) in
                         DMView(event: dms.events[ind], damus_state: damus_state)
-                            .event_context_menu(ev, privkey: damus_state.keypair.privkey)
+                            .event_context_menu(ev, pubkey: ev.pubkey, privkey: damus_state.keypair.privkey)
                     }
                     EndBlock(height: 80)
                 }
@@ -27,6 +27,10 @@ struct DMChatView: View {
             }
             .onAppear {
                 scroller.scrollTo("endblock")
+            }.onChange(of: dms.events.count) { _ in
+                withAnimation {
+                    scroller.scrollTo("endblock")
+                }
             }
         }
     }
@@ -40,7 +44,7 @@ struct DMChatView: View {
             HStack {
                 ProfilePicView(pubkey: pubkey, size: 24, highlight: .none, profiles: damus_state.profiles)
 
-                ProfileName(pubkey: pubkey, profile: profile, contacts: damus_state.contacts, show_friend_confirmed: true)
+                ProfileName(pubkey: pubkey, profile: profile, damus: damus_state, show_friend_confirmed: true)
             }
         }
         .buttonStyle(PlainButtonStyle())

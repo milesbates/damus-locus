@@ -1,3 +1,88 @@
+## [1.0.0-5] - 2023-01-06
+
+### Added
+
+- Added share button to profile (William Casarin)
+- Added universal link sharing of notes (William Casarin)
+- Added clear cache button to wipe pfp/image cache (OlegAba)
+- Allow Adding Relay Without wss:// Prefix (Joel Klabo)
+- Allow Saving Images to Library (Joel Klabo)
+
+
+### Changed
+
+- Added damus gradient to post button (Ben Weeks)
+- Center the Post Button (Thomas)
+- Switch yellow nip05 check to gray (William Casarin)
+- Switch from bluecheck to purplecheck (William Casarin)
+
+
+### Fixed
+
+- Add system background color to profile pics (OlegAba)
+- High res color pubkey on profile page (William Casarin)
+- Don't spin forever if we're temporarily disconnected (William Casarin)
+- Fixed a few issues with avatars not animating (OlegAba)
+- Scroll to bottom when new DM received (Aidan O'Loan)
+- Make reply view scrollable (Joel Klabo)
+- Hide profile edit button when logged in with pubkey (Swift)
+
+
+[1.0.0-5]: https://github.com/damus-io/damus/releases/tag/v1.0.0-5
+
+## [1.0.0-4] - 2023-01-04
+
+### Added
+
+- Added NIP05 Verification (William Casarin)
+- Downscale images if they are unreasonably large (OlegAba)
+
+
+### Changed
+
+- Revert to old style ln/dm buttons (William Casarin)
+
+
+### Fixed
+
+- Fix ascii shrug guy (Lionello Lunesu)
+- Fix navigation popping in threads (William Casarin)
+
+
+[1.0.0-4]: https://github.com/damus-io/damus/releases/tag/v1.0.0-4
+
+## [1.0.0-2] - 2023-01-03
+
+### Added
+
+- Cache link previews (William Casarin)
+- Added brb.io to recommended relay list (William Casarin)
+- Add Blixt Wallet to Wallet Selector (Benjamin Hakes)
+- Add River Wallet to Wallet Selector (Benjamin Hakes)
+
+
+### Changed
+
+- Added muted shaka images instead of thumbs up (CutClout)
+- Updated profile page look and feel (Ben Weeks)
+- Filter replies from global feed (Nitesh Balusu)
+- Show non-image links inline (William Casarin)
+- Add swipe gesture to switch between tabs (Thomas Rademaker)
+- Parse links in profiles (Lionello Lunesu) (Lio李歐)
+
+
+### Fixed
+
+- Fix detection of email addresses in profiles (Lionello Lunesu)
+- Fix padding on search results view (OlegAba)
+- Fix home view moving after selecting from search result (OlegAba)
+- Fix bug where boost event is loaded in the thread instead of the boosted event (William Casarin)
+- Hide edit button on profile page when no private key (Swift)
+- Fixed follows and relays getting out of sync on profile pages (William Casarin)
+
+
+
+[1.0.0-2]: https://github.com/damus-io/damus/releases/tag/v1.0.0-2
 ## [1.0.0] - 2023-01-01
 
 ### Added
@@ -265,4 +350,6 @@
 
 
 [0.1.2]: https://github.com/damus-io/damus/releases/tag/v0.1.2
+
+
 

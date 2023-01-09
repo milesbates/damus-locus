@@ -6,6 +6,7 @@
 //
 import AVFoundation
 import SwiftUI
+import Kingfisher
 
 struct ConfigView: View {
     let state: DamusState
@@ -54,9 +55,18 @@ struct ConfigView: View {
     var body: some View {
         ZStack(alignment: .leading) {
             Form {
-                Section("Relays") {
+                Section {
                     List(Array(relays), id: \.url) { relay in
                         RelayView(state: state, relay: relay.url.absoluteString)
+                    }
+                } header: {
+                    HStack {
+                        Text("Relays")
+                        Spacer()
+                        Button(action: { show_add_relay = true }) {
+                            Image(systemName: "plus")
+                                .foregroundColor(.accentColor)
+                        }
                     }
                 }
                 
@@ -104,25 +114,19 @@ struct ConfigView: View {
                     }
                 }
                 
+                Section("Clear Cache") {
+                    Button("Clear") {
+                        KingfisherManager.shared.cache.clearMemoryCache()
+                        KingfisherManager.shared.cache.clearDiskCache()
+                        KingfisherManager.shared.cache.cleanExpiredDiskCache()
+                    }
+                }
+                
                 Section("Reset") {
                     Button("Logout") {
                         confirm_logout = true
                     }
                 }
-            }
-            
-            VStack {
-                HStack {
-                    Spacer()
-                    
-                    Button(action: { show_add_relay = true }) {
-                        Label("", systemImage: "plus")
-                            .foregroundColor(.accentColor)
-                            .padding()
-                    }
-                }
-                
-                Spacer()
             }
         }
         .navigationTitle("Settings")
@@ -139,14 +143,18 @@ struct ConfigView: View {
         }
         .sheet(isPresented: $show_add_relay) {
             AddRelayView(show_add_relay: $show_add_relay, relay: $new_relay) { m_relay in
-                guard let relay = m_relay else {
+                guard var relay = m_relay else {
                     return
+                }
+                
+                if relay.starts(with: "wss://") == false {
+                    relay = "wss://" + relay
                 }
                 
                 guard let url = URL(string: relay) else {
                     return
                 }
-                
+                                
                 guard let ev = state.contacts.event else {
                     return
                 }
@@ -161,9 +169,9 @@ struct ConfigView: View {
                     return
                 }
                 
-                state.pool.connect(to: [new_relay])
+                state.pool.connect(to: [relay])
                 
-                guard let new_ev = add_relay(ev: ev, privkey: privkey, current_relays: state.pool.descriptors, relay: new_relay, info: info) else {
+                guard let new_ev = add_relay(ev: ev, privkey: privkey, current_relays: state.pool.descriptors, relay: relay, info: info) else {
                     return
                 }
                 

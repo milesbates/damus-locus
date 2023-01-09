@@ -115,6 +115,7 @@
 		4CACA9DC280C38C000D9BBE8 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CACA9DB280C38C000D9BBE8 /* Profiles.swift */; };
 		4CB55EF3295E5D59007FD187 /* RecommendedRelayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB55EF2295E5D59007FD187 /* RecommendedRelayView.swift */; };
 		4CB55EF5295E679D007FD187 /* UserRelaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB55EF4295E679D007FD187 /* UserRelaysView.swift */; };
+		4CB8838629656C8B00DC99E7 /* NIP05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB8838529656C8B00DC99E7 /* NIP05.swift */; };
 		4CD7641B28A1641400B6928F /* EndBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD7641A28A1641400B6928F /* EndBlock.swift */; };
 		4CE4F8CD281352B30009DFBB /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4F8CC281352B30009DFBB /* Notifications.swift */; };
 		4CE4F9DE2852768D00C00DD9 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4F9DD2852768D00C00DD9 /* ConfigView.swift */; };
@@ -137,11 +138,13 @@
 		4CEE2AF9280B2EAC00AB5EEF /* PowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE2AF8280B2EAC00AB5EEF /* PowView.swift */; };
 		4CEE2B02280B39E800AB5EEF /* EventActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE2B01280B39E800AB5EEF /* EventActionBar.swift */; };
 		4FE60CDD295E1C5E00105A1F /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE60CDC295E1C5E00105A1F /* Wallet.swift */; };
+		64FBD06F296255C400D9D3B2 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FBD06E296255C400D9D3B2 /* Theme.swift */; };
 		6C7DE41F2955169800E66263 /* Vault in Frameworks */ = {isa = PBXBuildFile; productRef = 6C7DE41E2955169800E66263 /* Vault */; };
 		910805D2295BF81300C384FE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910805D1295BF81300C384FE /* Location.swift */; };
 		91CC0A8E29608EB000EA4FBD /* MapSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC0A8D29608EB000EA4FBD /* MapSheetView.swift */; };
 		BA693074295D649800ADDB87 /* UserSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA693073295D649800ADDB87 /* UserSettingsStore.swift */; };
 		BAB68BED29543FA3007BA466 /* SelectWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB68BEC29543FA3007BA466 /* SelectWalletView.swift */; };
+		DD597CBD2963D85A00C64D32 /* MarkdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD597CBC2963D85A00C64D32 /* MarkdownTests.swift */; };
 		E990020F2955F837003BBC5A /* EditMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990020E2955F837003BBC5A /* EditMetadataView.swift */; };
 		E9E4ED0B295867B900DD7078 /* ThreadV2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4ED0A295867B900DD7078 /* ThreadV2View.swift */; };
 /* End PBXBuildFile section */
@@ -304,6 +307,7 @@
 		4CACA9DB280C38C000D9BBE8 /* Profiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
 		4CB55EF2295E5D59007FD187 /* RecommendedRelayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedRelayView.swift; sourceTree = "<group>"; };
 		4CB55EF4295E679D007FD187 /* UserRelaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRelaysView.swift; sourceTree = "<group>"; };
+		4CB8838529656C8B00DC99E7 /* NIP05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIP05.swift; sourceTree = "<group>"; };
 		4CD7641A28A1641400B6928F /* EndBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndBlock.swift; sourceTree = "<group>"; };
 		4CE4F8CC281352B30009DFBB /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		4CE4F9DD2852768D00C00DD9 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
@@ -331,8 +335,10 @@
 		910805D1295BF81300C384FE /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		91CC0A8D29608EB000EA4FBD /* MapSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapSheetView.swift; sourceTree = "<group>"; };
 		4FE60CDC295E1C5E00105A1F /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		64FBD06E296255C400D9D3B2 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		BA693073295D649800ADDB87 /* UserSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsStore.swift; sourceTree = "<group>"; };
 		BAB68BEC29543FA3007BA466 /* SelectWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWalletView.swift; sourceTree = "<group>"; };
+		DD597CBC2963D85A00C64D32 /* MarkdownTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownTests.swift; sourceTree = "<group>"; };
 		E990020E2955F837003BBC5A /* EditMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMetadataView.swift; sourceTree = "<group>"; };
 		E9E4ED0A295867B900DD7078 /* ThreadV2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadV2View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -467,49 +473,48 @@
 		4C75EFA227FA576C0006080F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				91CC0A8D29608EB000EA4FBD /* MapSheetView.swift */,
-				3169CAE4294E699400EE4006 /* Empty Views */,
-				4C75EFA327FA577B0006080F /* PostView.swift */,
-				4C75EFAC28049CFB0006080F /* PostButton.swift */,
-				4C75EFB82804A2740006080F /* EventView.swift */,
-				4CEE2AF0280B216B00AB5EEF /* EventDetailView.swift */,
-				4CEE2AF2280B25C500AB5EEF /* ProfilePicView.swift */,
-				4CEE2AF6280B2DEA00AB5EEF /* ProfileName.swift */,
-				4CEE2AF8280B2EAC00AB5EEF /* PowView.swift */,
-				4CEE2B01280B39E800AB5EEF /* EventActionBar.swift */,
-				4CACA9D4280C31E100D9BBE8 /* ReplyView.swift */,
-				4CA2EF9F280E37AC0044ACD8 /* TimelineView.swift */,
+				4CE4F9E228528C5200C00DD9 /* AddRelayView.swift */,
+				4C363A8728236948006E126D /* BlocksView.swift */,
+				4C285C8128385570008A31F1 /* CarouselView.swift */,
 				4C0A3F8B280F5FCA000448DE /* ChatroomView.swift */,
 				4C0A3F90280F6528000448DE /* ChatView.swift */,
-				4C0A3F94280F6C78000448DE /* ReplyQuoteView.swift */,
-				4C0A3F96280F8E02000448DE /* ThreadView.swift */,
-				4C8682862814DE470026224F /* ProfileView.swift */,
-				4C363A8728236948006E126D /* BlocksView.swift */,
-				4C363A8928236B57006E126D /* MentionView.swift */,
-				4C363A8B28236B92006E126D /* PubkeyView.swift */,
-				4C363A8D28236FE4006E126D /* NoteContentView.swift */,
-				4C363AA128296A7E006E126D /* SearchView.swift */,
-				4C3AC79C2833036D00E1F516 /* FollowingView.swift */,
-				4C3AC79E2833115300E1F516 /* FollowButtonView.swift */,
-				4C3AC7A02835A81400E1F516 /* SetupView.swift */,
-				4C3AC7A42836987600E1F516 /* MainTabView.swift */,
-				4C3AC7A628369BA200E1F516 /* SearchHomeView.swift */,
-				4C285C8128385570008A31F1 /* CarouselView.swift */,
-				4C285C8328385690008A31F1 /* CreateAccountView.swift */,
-				4C285C892838B985008A31F1 /* ProfilePictureSelector.swift */,
-				4C285C8D28399BFD008A31F1 /* SaveKeysView.swift */,
-				4C90BD17283A9EE5008EE7EF /* LoginView.swift */,
-				4C5C7E69284EDE2E00A22DF5 /* SearchResultsView.swift */,
 				4CE4F9DD2852768D00C00DD9 /* ConfigView.swift */,
-				4CE4F9E228528C5200C00DD9 /* AddRelayView.swift */,
+				4C285C8328385690008A31F1 /* CreateAccountView.swift */,
 				4C64987B286D03E000EAE2B3 /* DirectMessagesView.swift */,
 				4C216F31286E388800040376 /* DMChatView.swift */,
 				4C216F33286F5ACD00040376 /* DMView.swift */,
-				4C06670028FC7C5900038D2A /* RelayView.swift */,
 				E990020E2955F837003BBC5A /* EditMetadataView.swift */,
-				BAB68BEC29543FA3007BA466 /* SelectWalletView.swift */,
-				E9E4ED0A295867B900DD7078 /* ThreadV2View.swift */,
+				3169CAE4294E699400EE4006 /* Empty Views */,
+				4CEE2B01280B39E800AB5EEF /* EventActionBar.swift */,
+				4CEE2AF0280B216B00AB5EEF /* EventDetailView.swift */,
+				4C75EFB82804A2740006080F /* EventView.swift */,
+				4C3AC79E2833115300E1F516 /* FollowButtonView.swift */,
+				4C3AC79C2833036D00E1F516 /* FollowingView.swift */,
+				4C90BD17283A9EE5008EE7EF /* LoginView.swift */,
+				4C3AC7A42836987600E1F516 /* MainTabView.swift */,
+				4C363A8928236B57006E126D /* MentionView.swift */,
+				4C363A8D28236FE4006E126D /* NoteContentView.swift */,
+				4C75EFAC28049CFB0006080F /* PostButton.swift */,
+				4C75EFA327FA577B0006080F /* PostView.swift */,
+				4CEE2AF8280B2EAC00AB5EEF /* PowView.swift */,
+				4CEE2AF6280B2DEA00AB5EEF /* ProfileName.swift */,
+				4C285C892838B985008A31F1 /* ProfilePictureSelector.swift */,
+				4CEE2AF2280B25C500AB5EEF /* ProfilePicView.swift */,
+				4C8682862814DE470026224F /* ProfileView.swift */,
+				4C363A8B28236B92006E126D /* PubkeyView.swift */,
 				4CB55EF2295E5D59007FD187 /* RecommendedRelayView.swift */,
+				4C06670028FC7C5900038D2A /* RelayView.swift */,
+				4C0A3F94280F6C78000448DE /* ReplyQuoteView.swift */,
+				4CACA9D4280C31E100D9BBE8 /* ReplyView.swift */,
+				4C285C8D28399BFD008A31F1 /* SaveKeysView.swift */,
+				4C3AC7A628369BA200E1F516 /* SearchHomeView.swift */,
+				4C5C7E69284EDE2E00A22DF5 /* SearchResultsView.swift */,
+				4C363AA128296A7E006E126D /* SearchView.swift */,
+				BAB68BEC29543FA3007BA466 /* SelectWalletView.swift */,
+				4C3AC7A02835A81400E1F516 /* SetupView.swift */,
+				E9E4ED0A295867B900DD7078 /* ThreadV2View.swift */,
+				4C0A3F96280F8E02000448DE /* ThreadView.swift */,
+				4CA2EF9F280E37AC0044ACD8 /* TimelineView.swift */,
 				4CB55EF4295E679D007FD187 /* UserRelaysView.swift */,
 			);
 			path = Views;
@@ -551,6 +556,8 @@
 				910805D1295BF81300C384FE /* Location.swift */,
 				3165648A295B70D500C64604 /* LinkView.swift */,
 				4C3A1D3629637E0500558C0F /* PreviewCache.swift */,
+				64FBD06E296255C400D9D3B2 /* Theme.swift */,
+				4CB8838529656C8B00DC99E7 /* NIP05.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -620,6 +627,7 @@
 		4CE6DEF627F7A08200C66700 /* damusTests */ = {
 			isa = PBXGroup;
 			children = (
+				DD597CBC2963D85A00C64D32 /* MarkdownTests.swift */,
 				4C90BD1B283AC38E008EE7EF /* Bech32Tests.swift */,
 				4C363A9F2828A8DD006E126D /* LikeTests.swift */,
 				4C363A9D2828A822006E126D /* ReplyTests.swift */,
@@ -849,6 +857,7 @@
 				4C0A3F93280F66F5000448DE /* ReplyMap.swift in Sources */,
 				BAB68BED29543FA3007BA466 /* SelectWalletView.swift in Sources */,
 				3169CAE6294E69C000EE4006 /* EmptyTimelineView.swift in Sources */,
+				64FBD06F296255C400D9D3B2 /* Theme.swift in Sources */,
 				4C3EA64928FF597700C48A62 /* bech32.c in Sources */,
 				4C90BD162839DB54008EE7EF /* NostrMetadata.swift in Sources */,
 				4C3A1D3729637E0500558C0F /* PreviewCache.swift in Sources */,
@@ -873,6 +882,7 @@
 				4C3EA64F28FF59F200C48A62 /* tal.c in Sources */,
 				4C8682872814DE470026224F /* ProfileView.swift in Sources */,
 				4C5F9114283D694D0052CD1C /* FollowTarget.swift in Sources */,
+				4CB8838629656C8B00DC99E7 /* NIP05.swift in Sources */,
 				4C5C7E6A284EDE2E00A22DF5 /* SearchResultsView.swift in Sources */,
 				4CE6DF1627F8DEBF00C66700 /* RelayConnection.swift in Sources */,
 				4C3BEFD6281D995700B3DE84 /* ActionBarModel.swift in Sources */,
@@ -922,6 +932,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ACBCB78295FE5C70037388A /* TimeAgoTests.swift in Sources */,
+				DD597CBD2963D85A00C64D32 /* MarkdownTests.swift in Sources */,
 				4C3EA67B28FF7B3900C48A62 /* InvoiceTests.swift in Sources */,
 				4C363A9E2828A822006E126D /* ReplyTests.swift in Sources */,
 				4C363AA02828A8DD006E126D /* LikeTests.swift in Sources */,
@@ -1090,7 +1101,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = damus/damus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"damus/Preview Content\"";
 				DEVELOPMENT_TEAM = XK7H4JAB3D;
 				ENABLE_PREVIEWS = YES;
@@ -1131,7 +1142,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = damus/damus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"damus/Preview Content\"";
 				DEVELOPMENT_TEAM = XK7H4JAB3D;
 				ENABLE_PREVIEWS = YES;
